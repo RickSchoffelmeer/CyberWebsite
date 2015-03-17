@@ -15,6 +15,5 @@ namespace CyberWebsite.Controllers
         {
             return View();
         }
-        //hoi hoi
 	}
 }

@@ -19,6 +19,7 @@ namespace CyberWebsite.Controllers
 
             return View(model);
         }
+
         public ActionResult Edit(int id)
         {
 
