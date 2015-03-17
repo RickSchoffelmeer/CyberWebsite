@@ -1,0 +1,49 @@
+﻿@model IEnumerable<CyberWebsite.Models.Categories>
+
+@{
+    ViewBag.Title = "Categories";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Categories</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdParent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdParent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id })
+            
+            @if (item.IdParent != 0)
+            {
+                <text>|</text> @Html.ActionLink("Delete", "Delete", new {id = item.Id}, new { onclick = "return confirm('Are you sure?')"})
+            }
+        </td>
+    </tr>
+}
+
+</table>

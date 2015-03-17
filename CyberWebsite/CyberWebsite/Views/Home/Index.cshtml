@@ -1,0 +1,16 @@
+﻿@using CyberWebsite.Models
+@model IEnumerable<CyberWebsite.Models.Categories>
+
+@{
+    ViewBag.Title = "FARK";
+}
+
+<div style="height: 250px;">
+    @foreach (Categories item in Model)
+    {
+        <div style="padding: 10px;">
+            <!-- link to each four topcategories -->
+            @Html.ActionLink(item.Description, "ProductsInCategory", "Product", new { id = item.Id }, null)
+        </div>
+    }
+</div>
