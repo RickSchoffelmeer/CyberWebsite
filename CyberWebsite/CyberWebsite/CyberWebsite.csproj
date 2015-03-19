@@ -202,6 +202,7 @@
     <Content Include="Views\Categories\Create.cshtml" />
     <Content Include="Views\Product\ProductsInCategory.cshtml" />
     <Content Include="Views\Categories\_CategoryList.cshtml" />
+    <Content Include="Views\Product\_ProductInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

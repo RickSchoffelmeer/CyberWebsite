@@ -10,7 +10,15 @@
 <div class="row">
     <div class="col-md-4">
         <!-- renders a partial view with the subcategories -->
-        @{ Html.RenderAction("_CategoryList", "Categories", new {id = categoryId}); }
+        @{ Html.RenderAction("_CategoryList", "Categories", new { id = categoryId }); }
     </div>
-    <div class="col-md-8">Products</div>
+    <div class="col-md-8">
+        @if (categoryId < 10)
+        { <h2>Kies een Robot</h2> }
+                                  else
+        { 
+        //@//Html.RenderAction("_ProductInfo", "Product")}
+        }
+        @{ Html.RenderAction("_ProductInfo", "Product", new { id = categoryId }); }
+    </div>
 </div>
