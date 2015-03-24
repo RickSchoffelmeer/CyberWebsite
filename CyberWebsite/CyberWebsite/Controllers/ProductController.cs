@@ -24,23 +24,9 @@ namespace CyberWebsite.Controllers
             return View();
         }
 
-        public PartialViewResult _ProductInfo(int id)
+        public ActionResult Index()
         {
-            IList<Categories> model = null;
-            //Gets the category
-            Categories category = cyberDB.Categories.First(x => x.Id == id);
-
-            //If category is root, get all subcategories
-            if (category.IdParent == 0)
-            {
-                model = cyberDB.Categories.Where(x => x.IdParent == category.Id).ToList();
-            }
-            else //Check get all parent's subcategories
-            {
-                model = cyberDB.Categories.Where(x => x.IdParent == category.IdParent).ToList();
-            }
-
-            return PartialView(model);
+            return View();
         }
 	}
 }

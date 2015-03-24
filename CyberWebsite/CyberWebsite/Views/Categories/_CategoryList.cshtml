@@ -1,9 +1,0 @@
-﻿@model IEnumerable<CyberWebsite.Models.Categories>
-
-<h3>Sub-categories</h3>
-<ul class="list-unstyled">
-    @foreach (var item in Model)
-    {
-        <li>@Html.ActionLink(item.Description, "ProductsInCategory", "Product", new { id = item.Id }, null)</li>
-    }
-</ul>
